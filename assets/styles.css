@@ -47,28 +47,25 @@ html, body, .stApp {
    Instead, your app.py should render simple nav items
    with class="nav-item" on a <button> or <a>.        */
 
+/* NAV BUTTONS (Dashboard, Leads, AI Follow-Up, Reports) */
 .nav-item {
-  padding: 8px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #e5e7eb;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    background-color: #3b82f6 !important;   /* blue bubble */
+    color: #ffffff !important;              /* white text */
+    border-radius: 999px !important;
+    padding: 10px 24px !important;
+    border: none !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+    text-decoration: none !important;
 }
 
+/* Hover */
 .nav-item:hover {
-  background: #111827;
-  border-color: #374151;
+    background-color: #2563eb !important;
+    cursor: pointer !important;
 }
 
-.nav-item.active {
-  background: #3b82f6;
-  border-color: #60a5fa;
-  color: #ffffff;
-}
 
 /* Yellow underline under active section (if you still use it) */
 .nav-underline {
@@ -157,17 +154,16 @@ html, body, .stApp {
 
 /* ================= BUTTONS ================= */
 
-.stButton button {
-  background: #3b82f6 !important;
-  color: #ffffff !important;
-  border-radius: 999px !important;
-  padding: 8px 20px !important;
-  border: 1px solid #60a5fa !important;
-  font-weight: 600 !important;
-}
 
 .stButton button:hover {
   background: #1d4ed8 !important;
+}
+/* Fix Add New Lead expander header background */
+.streamlit-expanderHeader {
+    background-color: #020617 !important; 
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    border: 1px solid #1f2933 !important;
 }
 
 /* ================= TABLES ================= */
@@ -250,11 +246,6 @@ section > div > p, .stMarkdown, .stText, .stHeader {
     font-size: 17px;
 }
 
-/* The bold labels (Customer:, Company:) */
-.ai-card strong {
-    color: #eab308 !important; /* gold */
-}
-
 /* Fix expander labels (Add New Lead) */
 .st-expander .st-expanderHeader p {
     color: #ffffff !important;
@@ -294,6 +285,161 @@ section > div > p, .stMarkdown, .stText, .stHeader {
 
 .ai-card h4 {
     color: #eab308 !important; /* keep the title gold */
+}
+
+/* Hover state */
+div[data-testid="stMarkdownContainer"] p:hover {
+    background-color: #2563eb !important;
+    cursor: pointer !important;
+}
+/* === FIX ADD NEW LEAD EXPANDER HEADER === */
+summary.st-emotion-cache-18crxeu {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-radius: 10px !important;
+    padding: 10px 16px !important;
+    border: none !important;
+}
+.nav-item {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    padding: 10px 22px !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+/* Save Lead button bubble */
+button[data-testid="stBaseButton-secondaryFormSubmit"] {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    padding: 10px 22px !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+button[data-testid="stBaseButton-secondaryFormSubmit"] p {
+    color: #ffffff !important;
+}
+button[data-testid="stBaseButton-secondaryFormSubmit"]:hover,
+summary.st-emotion-cache-18crxeu:hover,
+.nav-item:hover {
+    background-color: #2563eb !important;
+}
+[data-testid="stExpander"] summary {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    padding: 10px 22px !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+.nav-item {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    padding: 10px 22px !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+[data-testid="stExpander"] summary {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    padding: 10px 22px !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+button[data-testid="stBaseButton-secondaryFormSubmit"] {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    padding: 10px 22px !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+/* ============================
+   FIX NAV TABS TO BLUE BUBBLES
+   ============================ */
+
+button[data-testid="stBaseButton-secondaryFormSubmit"] {
+    background-color: #3b82f6 !important;  /* blue */
+    color: #ffffff !important;             /* white text */
+    border-radius: 999px !important;
+    padding: 10px 22px !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+}
+
+/* Hover state */
+button[data-testid="stBaseButton-secondaryFormSubmit"]:hover {
+    background-color: #1d4ed8 !important;  /* darker blue */
+    color: #ffffff !important;
+}
+
+/* Fix the inner <p> tag color */
+button[data-testid="stBaseButton-secondaryFormSubmit"] p {
+    color: #ffffff !important;
+}
+/* ===============================
+   FIX NAVIGATION TABS (REAL FIX)
+   =============================== */
+
+button.st-emotion-cache-18crexh {
+    background-color: #3b82f6 !important;   /* blue bubble */
+    color: #ffffff !important;              /* white text */
+    border-radius: 999px !important;
+    padding: 10px 22px !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+}
+
+/* Fix inner <p> text inside the button */
+button.st-emotion-cache-18crexh p {
+    color: #ffffff !important;
+}
+
+/* Hover effect */
+button.st-emotion-cache-18crexh:hover {
+    background-color: #1d4ed8 !important;   /* darker blue */
+    color: #ffffff !important;
+}
+/* WHATSAPP BUTTON – match other blue bubbles */
+a[data-testid="stBaseLinkButton-secondary"] {
+    background-color: #3b82f6 !important;  /* blue */
+    color: #ffffff !important;             /* white text */
+    border-radius: 999px !important;
+    padding: 10px 22px !important;
+    border: none !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+}
+
+/* inner text */
+a[data-testid="stBaseLinkButton-secondary"] p {
+    color: #ffffff !important;
+}
+
+/* hover */
+a[data-testid="stBaseLinkButton-secondary"]:hover {
+    background-color: #1d4ed8 !important;  /* darker blue */
+}
+/* =========================================
+   FULL APP BACKGROUND — PREMIUM NAVY BLUE
+   ========================================= */
+html, body, .stApp {
+    background-color: #112240 !important;  /* premium navy blue */
+    color: #ffffff !important;
+}
+
+/* Ensure page title stays bright white */
+#gordo-header .title {
+    color: #ffffff !important;
 }
 
 
