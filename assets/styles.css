@@ -1,0 +1,299 @@
+/* ============================================
+   GORDO PORTAL – CLEAN DARK THEME (RESET)
+   No global hacks. Only our own classes.
+=============================================== */
+
+/* Base background + text */
+html, body, .stApp {
+  background-color: #050816;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+}
+
+/* ================= HEADER ================== */
+
+#gordo-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+#gordo-header img {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+}
+
+#gordo-header .title {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: 0;
+  color: #f9fafb;
+}
+
+/* ================= NAV BAR ================= */
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #1f2933;
+  padding: 10px 0 16px 0;
+  margin-bottom: 24px;
+}
+
+/* We're NOT touching Streamlit's internals anymore.
+   Instead, your app.py should render simple nav items
+   with class="nav-item" on a <button> or <a>.        */
+
+.nav-item {
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e5e7eb;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #111827;
+  border-color: #374151;
+}
+
+.nav-item.active {
+  background: #3b82f6;
+  border-color: #60a5fa;
+  color: #ffffff;
+}
+
+/* Yellow underline under active section (if you still use it) */
+.nav-underline {
+  height: 3px;
+  width: 140px;
+  background: #fbbf24;
+  margin-top: 6px;
+  border-radius: 999px;
+}
+
+/* ============== METRIC CARDS ============== */
+
+.metric-row {
+  display: flex;
+  gap: 18px;
+  margin: 16px 0 24px 0;
+}
+
+.metric-card {
+  background: #020617;
+  border-radius: 14px;
+  border: 1px solid #111827;
+  padding: 20px 22px;
+  min-width: 210px;
+}
+
+.metric-card .label {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.metric-card .value {
+  color: #f9fafb;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* ================= FORMS =================== */
+
+.stTextInput input,
+.stTextArea textarea,
+.stDateInput input {
+  background-color: #020617 !important;
+  border-radius: 10px !important;
+  border: 1px solid #1f2933 !important;
+  color: #e5e7eb !important;
+}
+
+/* Labels */
+.stTextInput > label,
+.stTextArea > label,
+.stSelectbox > label,
+.stDateInput > label {
+  color: #e5e7eb !important;
+  font-weight: 500;
+}
+
+/* Selectboxes (Status, Follow-up Style, etc.) */
+[data-baseweb="select"] > div {
+  background-color: #020617 !important;
+  border-radius: 10px !important;
+  border: 1px solid #1f2933 !important;
+  color: #e5e7eb !important;
+}
+
+[data-baseweb="select"] [class*="value"],
+[data-baseweb="select"] span {
+  color: #e5e7eb !important;
+}
+
+[data-baseweb="menu"] {
+  background-color: #020617 !important;
+  border-radius: 10px !important;
+  border: 1px solid #1f2933 !important;
+}
+
+[data-baseweb="menu"] div[role="option"] {
+  color: #e5e7eb !important;
+}
+
+[data-baseweb="menu"] div[role="option"]:hover {
+  background-color: #111827 !important;
+  color: #3b82f6 !important;
+}
+
+/* ================= BUTTONS ================= */
+
+.stButton button {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  padding: 8px 20px !important;
+  border: 1px solid #60a5fa !important;
+  font-weight: 600 !important;
+}
+
+.stButton button:hover {
+  background: #1d4ed8 !important;
+}
+
+/* ================= TABLES ================= */
+
+thead tr th {
+  background: #020617 !important;
+  color: #9ca3af !important;
+  border-bottom: 1px solid #111827 !important;
+}
+
+tbody tr td {
+  border-bottom: 1px solid #111827 !important;
+}
+
+tbody tr:nth-child(even) td {
+  background: #020617 !important;
+}
+
+/* ============== AI FOLLOW-UP CARD ============== */
+
+.ai-card {
+  background: #020617;
+  border-radius: 14px;
+  border: 1px solid #111827;
+  padding: 18px 22px;
+  color: #e5e7eb;
+}
+
+.ai-card h4 {
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+.ai-card strong {
+  color: #e5e7eb;
+}
+
+.ai-card div {
+  margin-bottom: 2px;
+}
+
+/* Notes textarea below AI follow-up */
+#notes-container textarea {
+  background: #020617 !important;
+  border-radius: 10px !important;
+  border: 1px solid #1f2933 !important;
+}
+
+/* Scrollbar (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111827;
+  border-radius: 999px;
+}
+/* ============================================================
+   FIX ALL DARK-TEXT VISIBILITY ISSUES (HEADERS + SUMMARY)
+   ============================================================ */
+
+/* Make Streamlit headers visible */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+}
+
+/* Make markdown section titles (## Dashboard, ## Leads, etc.) white */
+section > div > p, .stMarkdown, .stText, .stHeader {
+    color: #ffffff !important;
+}
+
+/* AI Follow-Up lead overview text */
+.ai-card {
+    color: #ffffff !important;
+}
+
+/* Inside the AI follow-up card */
+.ai-card div {
+    color: #ffffff !important;
+    font-size: 17px;
+}
+
+/* The bold labels (Customer:, Company:) */
+.ai-card strong {
+    color: #eab308 !important; /* gold */
+}
+
+/* Fix expander labels (Add New Lead) */
+.st-expander .st-expanderHeader p {
+    color: #ffffff !important;
+}
+
+/* Fix dataframe title (Recent Activity) */
+.stMarkdown h3, .stMarkdown h2 {
+    color: #ffffff !important;
+}
+
+/* Fix sub-section titles in Leads + AI Follow-up */
+.stMarkdown p {
+    color: #ffffff !important;
+}
+/* FORCE LEAD OVERVIEW TEXT TO BE WHITE AND VISIBLE */
+.ai-card {
+    color: #ffffff !important;
+}
+
+.ai-card div,
+.ai-card strong,
+.ai-card h4 {
+    color: #ffffff !important;
+}
+/* FORCE Lead Overview text to white */
+.ai-card {
+    color: #ffffff !important;
+}
+
+.ai-card div {
+    color: #ffffff !important;
+}
+
+.ai-card strong {
+    color: #ffffff !important;
+}
+
+.ai-card h4 {
+    color: #eab308 !important; /* keep the title gold */
+}
+
+
